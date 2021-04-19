@@ -60,7 +60,7 @@ export default function FlipWrapper({ cards, reset }) {
             Restart
           </Text>
           <View style={styles.stepsCountLabel}>
-            <Text style={styles.stepsLabel}> STEPS:</Text>
+            <Text data-testid="steps" style={styles.stepsLabel}> STEPS:</Text>
             <Text style={styles.stepsCountVal}> {steps}</Text>
           </View>
         </View>
