@@ -7,7 +7,12 @@ import {
   Animated
 } from "react-native";
 import styles from "./CardStyle";
-
+/**
+ * 
+ * @param {card} list of cards
+ * @param {onFlipItem} - handler for fliping the card
+ * @param {card} list - callback function
+ */
 export default function Card({ card, onFlipItem, openCard }) {
   const { value } = card;
   const [animatedValue, setAnimatedValue] = useState(new Animated.Value(0));
