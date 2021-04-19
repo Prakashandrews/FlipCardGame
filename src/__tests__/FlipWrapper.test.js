@@ -23,7 +23,7 @@ describe('FlipWrapper Test Suits', () => {
       reset: jest.fn(),
     };
     const {debug} = render(<FlipWrapper {...props} />);
-    debug();
+    //debug();
   });
 
   test('Test component with fire event', async () => {

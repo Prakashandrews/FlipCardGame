@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -83,51 +83,51 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CARD_PAIRS_VALUE } from "../constant";
 &nbsp;
-export const CardList = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-  const arr = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >  while (arr.length &lt; CARD_PAIRS_VALUE) {</span>
-    const r = <span class="cstat-no" title="statement not covered" >Math.floor(Math.random() * 100) + 1;</span>
-<span class="cstat-no" title="statement not covered" >    if (arr.indexOf(r) === -1) <span class="cstat-no" title="statement not covered" >arr.push(r);</span></span>
+export const CardList = () =&gt; {
+  const arr = [];
+  while (arr.length &lt; CARD_PAIRS_VALUE) {
+    const r = Math.floor(Math.random() * 100) + 1;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (arr.indexOf(r) === -1) arr.push(r);
   }
-<span class="cstat-no" title="statement not covered" >  return arr.concat(arr);</span>
+  return arr.concat(arr);
 };
 &nbsp;
-export const ShuffleArray = <span class="fstat-no" title="function not covered" >ar</span>ray =&gt; {
-  let arrayIndex = <span class="cstat-no" title="statement not covered" >array.length,</span>
+export const ShuffleArray = array =&gt; {
+  let arrayIndex = array.length,
     storeVal,
     indexVal;
-<span class="cstat-no" title="statement not covered" >  while (0 !== arrayIndex) {</span>
-<span class="cstat-no" title="statement not covered" >    indexVal = Math.floor(Math.random() * arrayIndex);</span>
-<span class="cstat-no" title="statement not covered" >    arrayIndex -= 1;</span>
-<span class="cstat-no" title="statement not covered" >    storeVal = array[arrayIndex];</span>
-<span class="cstat-no" title="statement not covered" >    array[arrayIndex] = array[indexVal];</span>
-<span class="cstat-no" title="statement not covered" >    array[indexVal] = storeVal;</span>
+  while (0 !== arrayIndex) {
+    indexVal = Math.floor(Math.random() * arrayIndex);
+    arrayIndex -= 1;
+    storeVal = array[arrayIndex];
+    array[arrayIndex] = array[indexVal];
+    array[indexVal] = storeVal;
   }
-<span class="cstat-no" title="statement not covered" >  return array;</span>
+  return array;
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -136,7 +136,7 @@ export const ShuffleArray = <span class="fstat-no" title="function not covered" 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Apr 19 2021 01:43:23 GMT+0800 (Singapore Standard Time)
+                at Tue Apr 20 2021 01:32:57 GMT+0800 (Singapore Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

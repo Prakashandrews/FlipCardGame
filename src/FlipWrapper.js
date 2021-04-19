@@ -1,10 +1,10 @@
-import React, { Component, useState, useEffect } from "react";
-import { Text, View, Alert } from "react-native";
-import styles from "./FlipWrapperStyle.js";
-import Card from "./flip-card/Card";
-import { CARD_PAIRS_VALUE } from "../src/constant";
+import React, {Component, useState, useEffect} from 'react';
+import {Text, View, Alert} from 'react-native';
+import styles from './FlipWrapperStyle.js';
+import Card from './flip-card/Card';
+import {CARD_PAIRS_VALUE} from '../src/constant';
 
-export default function FlipWrapper({ cards, reset }) {
+export default function FlipWrapper({cards, reset}) {
   const [cardList, setCardList] = useState(cards);
   const [openCard, setOpenCard] = useState([]);
   const [win, setWin] = useState(false);
@@ -20,47 +20,47 @@ export default function FlipWrapper({ cards, reset }) {
   };
 
   const onPressButton = (item, type, data) => {
-    const { value } = item;   
-    const openCard = data || [];   
+    const {value} = item;
+    const openCard = data || [];
     /**
      * Collect list of open cards and remove the card if its not open already
      */
-    if (type === "remove") {
+    if (type === 'remove') {
       const res = openCard.filter(x => x !== value);
-      setOpenCard(res);     
-    }
-    else {
+      setOpenCard(res);
+    } else {
       const openCardList = openCard.concat(value);
-      setOpenCard(openCardList);     
+      setOpenCard(openCardList);
       if (openCardList.length / 2 === CARD_PAIRS_VALUE) {
-        setWin(true);      
+        setWin(true);
       }
       setSteps(steps + 1);
-    }    
+    }
   };
 
   useEffect(() => {
     /* To set card default card list */
-    const arr = [];
-    cards.forEach((item, index) => {
-      arr.push({
-        value: item,
-        clickable: true,
-        flip: false
-      });
+    const carsProperties = cards.map(x => {
+      return {value: x};
     });
-    setCardList(arr);
+    setCardList(carsProperties);
   }, [cards]);
-  
+
   return (
     <>
       <View style={styles.resetGame}>
         <View style={styles.restart}>
-          <Text data-testid="restart" style={styles.restartLabel} onPress={resetGame}>
+          <Text
+            data-testid="restart"
+            style={styles.restartLabel}
+            onPress={resetGame}>
             Restart
           </Text>
           <View style={styles.stepsCountLabel}>
-            <Text data-testid="steps" style={styles.stepsLabel}> STEPS:</Text>
+            <Text data-testid="steps" style={styles.stepsLabel}>
+              {' '}
+              STEPS:
+            </Text>
             <Text style={styles.stepsCountVal}> {steps}</Text>
           </View>
         </View>
@@ -80,15 +80,15 @@ export default function FlipWrapper({ cards, reset }) {
 
         {win &&
           Alert.alert(
-            "Congratulations",
+            'Congratulations',
             `You win this game by ${steps} steps`,
             [
               {
-                text: "Try another round",
-                onPress: () => resetGame()
-              }
+                text: 'Try another round',
+                onPress: () => resetGame(),
+              },
             ],
-            { cancelable: false }
+            {cancelable: false},
           )}
       </View>
     </>

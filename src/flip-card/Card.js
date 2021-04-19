@@ -75,13 +75,13 @@ export default function Card({ card, onFlipItem, openCard }) {
     transform: [{ rotateY: backInterpolate }]
   };
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={flipCard}>
+    <View style={styles.container} data-testid="onpress">
+      <TouchableOpacity onPress={flipCard} data-testid="onpress">
         <View>
           <Animated.View
             style={[styles.flipCard, styles.flipCardFront, frontAnimatedStyle]}
           >
-            <Text style={[styles.frontText]}>{value}</Text>
+            <Text style={[styles.frontText]}>?</Text>
           </Animated.View>
 
           <Animated.View

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
-import FlipWrapper from "./src/FlipWrapper";
-import { CardList, ShuffleArray } from "./src/helper/utility";
+import React, {useState, useEffect} from 'react';
+import {StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
+import FlipWrapper from './src/FlipWrapper';
+import {CardList, ShuffleArray} from './src/helper/utility';
 
 export default function App() {
   const [list, setList] = useState([]);
@@ -19,17 +19,14 @@ export default function App() {
     getCardList();
   }, []);
   return (
-    <View style={styles.container}>
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}
-        >
-          {list.length > 0 && (
-            <FlipWrapper cards={ShuffleArray(list)} reset={reset} />
-          )}
-        </ScrollView>
-      </SafeAreaView>
+    <View style={styles.container} data-testid="wrapper">
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={styles.scrollView}>
+        {list.length > 0 && (
+          <FlipWrapper cards={ShuffleArray(list)} reset={reset} />
+        )}
+      </ScrollView>
     </View>
   );
 }
@@ -37,8 +34,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#423c44",
-    alignItems: "center",
-    justifyContent: "center"
-  }
+    backgroundColor: '#423c44',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
